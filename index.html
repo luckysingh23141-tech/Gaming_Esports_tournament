@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esports Tournament</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Rajdhani',sans-serif;}
+    body{background:#000;color:#fff;overflow-x:hidden;}
+
+    header{
+      background:linear-gradient(90deg,#0f0c29,#302b63,#24243e);
+      display:flex;justify-content:space-between;align-items:center;
+      padding:20px 40px;position:sticky;top:0;z-index:999;
+      animation:slideDown .8s forwards;
+    }
+    header h1{font-family:'Bebas Neue';font-size:2.8rem;color:#ff004f;letter-spacing:2px;}
+    nav a{margin-left:28px;color:#fff;text-decoration:none;font-weight:600;transition:.3s;font-size:1.05rem;}
+    nav a:hover{color:#ff004f;transform:translateY(-3px);}
+
+    .hero{
+      height: 100vh;
+      background: url(Upcoming-eSport-Tournaments-in-2024.jpg);
+      background-size: cover;          
+      background-position: center;    
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .hero::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);}
+    .hero *{position:relative;z-index:2;color:#fff;}
+    .hero h2{font-family:'Bebas Neue';font-size:4rem;text-shadow:0 0 10px #000;animation:fadeUp .9s forwards;}
+    .hero p{font-size:1.3rem;margin-top:10px;animation:fadeUp 1.2s forwards}
+    .btn{
+      margin-top:24px;padding:14px 40px;background:#ff004f;border:none;border-radius:35px;
+      color:#fff;font-size:1rem;cursor:pointer;letter-spacing:1px;
+      animation:glow 2s infinite alternate;
+    }
+    .btn:hover{transform:translateY(-3px);}
+
+    .section{padding:120px 40px;text-align:center;}
+    .section h2{font-family:'Bebas Neue';font-size:3rem;color:#ff004f;margin-bottom:15px;opacity:0;transform:translateY(50px);transition:.6s;}
+    .section.show h2{opacity:1;transform:translateY(0);}
+    .section p{max-width:750px;margin:0 auto;}
+
+    .card-container{display:flex;flex-wrap:wrap;justify-content:center;gap:26px;margin-top:45px;}
+    .card{
+      width:280px;background:#1b1b1b;border-radius:15px;overflow:hidden;
+      opacity:0;transform:translateY(50px);transition: all .8s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);text-align:left;
+    }
+    .card.show{opacity:1;transform:translateY(0);}
+    .card img{height:180px;width:100%;object-fit:cover;}
+    .card h3{padding:15px;font-size:1.5rem;font-family:'Bebas Neue';letter-spacing:1px;color:#ff004f;}
+    .card p{padding:0 15px 20px;color:#ccc;font-size:.95rem;}
+
+    form input,form select{
+      width:100%;padding:10px 14px;margin:12px 0;border:none;border-radius:6px;background:#2b2b2b;color:#fff;
+    }
+    form input:focus,form select:focus{outline:2px solid #ff004f;}
+    footer{background:#050505;padding:20px;text-align:center;color:#777;font-size:.9rem;margin-top:40px;}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(50px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes slideDown{0%{top:-80px;}100%{top:0;}}
+    @keyframes glow{from{box-shadow:0 0 10px #ff004f;}to{box-shadow:0 0 25px #ff004f;}}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ESPORTS ARENA</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#games">Games</a>
+    <a href="#register">Register</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Battle Begins Here!</h2>
+  <p>The Biggest Competitive Gaming Saga of the Year</p>
+  <button class="btn"><a href="#register">Register Now</a></button>
+</section>
+
+<section id="about" class="section">
+  <h2>About The Tournament</h2>
+  <p>Where legends rise and champions are made. Our Esports Arena is a Clash Of Skill, Strategy, and Pure Adrenaline — Built For Gamers Hungry For Glory. Step Into The Fight And Make Your Mark.</p>
+</section>
+
+<section id="games" class="section" style="background:#111;">
+  <h2>Featured Games</h2>
+  <div class="card-container">
+    <div class="card">
+      <img src="394521-valorant-game-agents-hero-4k-pc-wallpaper.jpg" alt="Valorant">
+      <h3>VALORENT</h3>
+      <p>5v5 tactical shooter requiring precision, teamwork and strategy.</p>
+    </div>
+    <div class="card">
+      <img src="freefire.jpg" alt="Free Fire">
+      <h3>FREE FIRE</h3>
+      <p>Battle Royale action-packed survival game with intense firefights.</p>
+    </div>
+    <div class="card">
+      <img src="BGMI1webp.webp" alt="BGMI">
+      <h3>BGMI</h3>
+      <p>Classic competitive shooter revered for its fast-paced gameplay.</p>
+    </div>
+  </div>
+</section>
+
+<section id="register" class="section">
+  <h2>Register Your Team</h2>
+  <p>Fill in your details to participate.</p><br>
+  <form style="max-width:500px;margin:auto;text-align:left;">
+    <label>Team Name</label>
+    <input type="text" placeholder="Your Team Name" />
+    <label>Captain Email</label>
+    <input type="email" placeholder="Email" />
+    <label>Select Game</label>
+    <select>
+      <option>Valorant</option>
+      <option>Free Fire</option>
+      <option>BGMI</option>
+    </select>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</section>
+
+<section id="contact" class="section" style="background:#111;">
+  <h2>Contact Us</h2>
+  <p>Email: esportsarena@gmail.com | Instagram: @esportsarena</p>
+</section>
+
+<footer>© 2025 Esports Arena. All rights reserved.</footer>
+
+<script>
+  // Reveal animation when scrolled
+  const sections = document.querySelectorAll('.section');
+  const cards = document.querySelectorAll('.card');
+  const reveal = () => {
+    sections.forEach(sec=>{
+      const top = sec.getBoundingClientRect().top;
+      const win = window.innerHeight;
+      if(top < win - 100) sec.classList.add('show');
+    });
+    cards.forEach(c=>{
+      const top = c.getBoundingClientRect().top;
+      const win = window.innerHeight;
+      if(top < win - 100) c.classList.add('show');
+    });
+  }
+  window.addEventListener('scroll', reveal);
+  reveal();
+</script>
+
+</body>
+</html>
